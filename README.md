@@ -1,4 +1,7 @@
 ## What is Pact?
+
+[![AUR package](https://img.shields.io/badge/AUR-pact--git-blue?logo=archlinux)](https://aur.archlinux.org/packages/pact-git)
+
 Package Tool, aka. pact, is a simple wrapper for the pacman package manager, similar to apt. The main use case for it is to provide newcomers with an easier time installing packages on Arch Linux.
 
 ## Install using AUR
