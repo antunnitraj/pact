@@ -36,7 +36,7 @@ sudo pact install htop
 sudo pact remove htop
 
 # Purge htop (removes all dependencies and htop)
-sudo pacman purge htop
+sudo pact purge htop
 ```
 
 ## Uninstall
