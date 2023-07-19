@@ -40,5 +40,5 @@ sudo pact purge htop
 
 ## Uninstall
 ```sh
-sudo pacman -R pact
+sudo pacman -R pact-git
 ```
