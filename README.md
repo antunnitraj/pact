@@ -1,10 +1,9 @@
 ## What is Pact?
 Package Tool, aka. pact, is a simple wrapper for the pacman package manager, similar to apt. The main use case for it is to provide newcomers with an easier time installing packages on Arch Linux.
 
-## Install
+## Install using AUR
 ```sh
-sudo wget https://raw.githubusercontent.com/antunnitraj/pact/main/pact -O /usr/bin/pact
-sudo chmod +x /usr/bin/pact
+yay -S pact-git
 ```
 
 ## Usage
@@ -41,5 +40,5 @@ sudo pact purge htop
 
 ## Uninstall
 ```sh
-sudo rm /usr/bin/pact
+sudo pacman -R pact
 ```
