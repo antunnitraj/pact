@@ -1,18 +1,12 @@
 #!/bin/bash
 
-# Check if the script is run with sudo privileges
-if [ "$EUID" -ne 0 ]; then
-  echo "Error: $0 must be run with sudo privileges!"
-  exit 1
-fi
-
 # Check if the first argument is provided
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 <command> <packages>..."
-  exit 1
+  echo "Usage: pact <operation> <packages>"
+  exit
 fi
 
-# Convert the first argument to lowercase and store it in the 'operation' variable
+# Convert the first argument to lowercase
 operation="${1,,}"
 shift 1
 
@@ -27,14 +21,8 @@ case "$operation" in
   "full-upgrade")
     pacman -Syyu "$@"
     ;;
-  "show")
-    pacman -Si "$@"
-    ;;
   "install")
     pacman -S "$@"
-    ;;
-  "search")
-    pacman -Ss "$@"
     ;;
   "remove")
     pacman -R "$@"
@@ -45,8 +33,16 @@ case "$operation" in
   "autoremove")
     pacman -Qtdq | pacman -Rns -
     ;;
+  "show")
+    pacman -Si "$@"
+    exit
+    ;;
+  "search")
+    pacman -Ss "$@"
+    exit
+    ;;
   *)
     echo "Invalid operation: $operation"
-    exit 2
+    exit 1
     ;;
 esac
