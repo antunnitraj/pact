@@ -35,11 +35,9 @@ case "$operation" in
     ;;
   "show")
     pacman -Si "$@"
-    exit
     ;;
   "search")
     pacman -Ss "$@"
-    exit
     ;;
   *)
     echo "Invalid operation: $operation"
